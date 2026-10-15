@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import DashboardView from '@/views/DashboardView.vue'
 import PlaceholderView from '@/views/PlaceholderView.vue'
+import ResponsaveisView from '../views/ResponsaveisView.vue'
 
 export const menu = [
   { path: '/', name: 'inicio', label: 'Início', icon: 'House' },
@@ -20,6 +21,10 @@ export const menu = [
   { path: '/ajuda', name: 'ajuda', label: 'Ajuda', icon: 'CircleHelp', submenu: true },
 ]
 
+const views = {
+  '/responsaveis': () => import('@/views/ResponsaveisView.vue'),
+}
+
 const routes = [
   { path: '/', name: 'inicio', component: DashboardView, meta: { title: 'Início' } },
   ...menu
@@ -27,7 +32,7 @@ const routes = [
     .map((m) => ({
       path: m.path,
       name: m.name,
-      component: PlaceholderView,
+      component: views[m.path] ?? PlaceholderView,
       meta: { title: m.label },
     })),
 ]
