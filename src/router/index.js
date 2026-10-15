@@ -23,6 +23,7 @@ export const menu = [
 
 const views = {
   '/responsaveis': () => import('@/views/ResponsaveisView.vue'),
+  '/animais': () => import('@/views/AnimaisView.vue'),
 }
 
 const routes = [
