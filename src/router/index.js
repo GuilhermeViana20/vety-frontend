@@ -24,6 +24,7 @@ const views = {
   '/responsaveis': () => import('@/views/ResponsaveisView.vue'),
   '/animais': () => import('@/views/AnimaisView.vue'),
   '/vacinas': () => import('@/views/VacinasView.vue'),
+  '/retornos': () => import('@/views/RetornosView.vue'),
 }
 
 const routes = [
