@@ -7,19 +7,18 @@ const ui = useUiStore()
 </script>
 
 <template>
-  <div class="min-h-screen">
+  <div class="min-h-screen w-full">
     <AppSidebar />
 
-    <!-- fundo escuro no mobile quando o menu está aberto -->
     <div
       v-if="ui.sidebarOpen"
       class="fixed inset-0 z-30 bg-ink-900/40 backdrop-blur-sm lg:hidden"
       @click="ui.closeSidebar"
     />
 
-    <div class="lg:pl-72">
+    <div class="flex min-h-screen flex-col lg:pl-72">
       <AppTopbar />
-      <main class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 lg:py-8">
+      <main class="flex-1 w-full px-4 py-6 sm:px-6 lg:px-8 lg:py-8">
         <RouterView />
       </main>
     </div>
