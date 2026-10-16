@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import DashboardView from '@/views/DashboardView.vue'
 import PlaceholderView from '@/views/PlaceholderView.vue'
-import ResponsaveisView from '../views/ResponsaveisView.vue'
 
 export const menu = [
   { path: '/', name: 'inicio', label: 'Início', icon: 'House' },
@@ -24,6 +23,7 @@ export const menu = [
 const views = {
   '/responsaveis': () => import('@/views/ResponsaveisView.vue'),
   '/animais': () => import('@/views/AnimaisView.vue'),
+  '/vacinas': () => import('@/views/VacinasView.vue'),
 }
 
 const routes = [
